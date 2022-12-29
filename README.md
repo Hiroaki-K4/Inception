@@ -37,10 +37,13 @@ For example, if your login is wil, wil.42.fr will redirect to the IP address poi
 Here is an example diagram of the expected result:
 ![inception](https://user-images.githubusercontent.com/51109408/208291025-eb56c6f3-3dc3-48fd-b9cd-85234a8b13b3.png)
 
+## References
+- [Nginx Beginner’s Guide](http://nginx.org/en/docs/beginners_guide.html)
+
 ```
 docker compose build
 ```
 
 ```
-docker compose run nginx bash
+docker compose run nginx
 ```
