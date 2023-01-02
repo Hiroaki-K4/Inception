@@ -45,5 +45,5 @@ docker compose build
 ```
 
 ```
-docker compose run nginx
+docker compose run --service-ports nginx
 ```
