@@ -1,4 +1,5 @@
 version: "3"
+
 services:
   nginx:
     build: ./requirements/nginx
@@ -7,3 +8,22 @@ services:
       - "443:443"
     volumes:
       - ./requirements/nginx/nginx.conf:/etc/nginx/sites-available/default
+      - shared-volume:/var/www/html
+    networks:
+      - frontend
+
+  wordpress:
+    build: ./requirements/wordpress
+    ports:
+      - "9000:9000"
+    volumes:
+      - shared-volume:/var/www/html
+    networks:
+      - frontend
+
+networks:
+  frontend:
+  backend:
+
+volumes:
+  shared-volume:

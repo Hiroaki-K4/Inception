@@ -45,5 +45,13 @@ docker compose build
 ```
 
 ```
-docker compose run nginx
+docker compose run --service-ports nginx
+```
+
+```
+docker compose up -d
+```
+
+```
+docker compose exec wordpress bash
 ```
