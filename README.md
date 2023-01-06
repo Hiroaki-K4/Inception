@@ -1,8 +1,10 @@
 # Inception
 
+
 ## Introduction
 This project aims to broaden your knowledge of system administration by using Docker.
 You will virtualize several Docker images, creating them in your new personal virtual machine.
+
 
 ## Mandatory part
 This project consists in having you set up a small infrastructure composed of different
@@ -37,21 +39,23 @@ For example, if your login is wil, wil.42.fr will redirect to the IP address poi
 Here is an example diagram of the expected result:
 ![inception](https://user-images.githubusercontent.com/51109408/208291025-eb56c6f3-3dc3-48fd-b9cd-85234a8b13b3.png)
 
+
+## How to run
+Run containers
+```
+make
+```
+
+Stop containers
+```
+make stop
+```
+
+Get inside the container
+```
+docker compose exec [nginx or wordpress] bash
+```
+
 ## References
 - [Nginx Beginner’s Guide](http://nginx.org/en/docs/beginners_guide.html)
-
-```
-docker compose build
-```
-
-```
-docker compose run --service-ports nginx
-```
-
-```
-docker compose up -d
-```
-
-```
-docker compose exec wordpress bash
-```
+- [php-fpmの設定を理解してサイトのパフォーマンスを向上させる](https://hackers-high.com/linux/php-fpm-config/)

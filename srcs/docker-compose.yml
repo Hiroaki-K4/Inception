@@ -7,7 +7,6 @@ services:
       - "8080:80"
       - "443:443"
     volumes:
-      - ./requirements/nginx/nginx.conf:/etc/nginx/sites-available/default
       - shared-volume:/var/www/html
     networks:
       - frontend
@@ -20,6 +19,9 @@ services:
       - shared-volume:/var/www/html
     networks:
       - frontend
+
+  mariadb:
+    build: ./requirements/mariadb
 
 networks:
   frontend:
