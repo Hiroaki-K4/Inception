@@ -53,7 +53,7 @@ make stop
 
 Get inside the container
 ```
-docker compose exec [nginx or wordpress] bash
+docker compose exec [nginx or wordpress or mariadb] bash
 ```
 
 ## References
