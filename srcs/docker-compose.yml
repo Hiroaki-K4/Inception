@@ -7,7 +7,7 @@ services:
       - "8080:80"
       - "443:443"
     volumes:
-      - wp:/var/www/html
+      - /home/hiroakik4/42/Inception/data/wp:/var/www/html
     networks:
       - app_network
 
@@ -16,7 +16,7 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - wp:/var/www/html
+      - /home/hiroakik4/42/Inception/data/wp:/var/www/html
     networks:
       - app_network
 
@@ -24,8 +24,8 @@ services:
     build: ./requirements/mariadb
     ports:
       - "3306:3306"
-    # volumes:
-    #   - /home/hiroakik4/42/volumes/db:/var/www/html
+    volumes:
+      - db:/var/lib/mysql
     networks:
       - app_network
 
@@ -33,5 +33,4 @@ networks:
   app_network:
 
 volumes:
-  wp:
   db:

@@ -6,7 +6,7 @@
 #    By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/02 21:15:48 by hkubo             #+#    #+#              #
-#    Updated: 2023/01/06 21:52:32 by hkubo            ###   ########.fr        #
+#    Updated: 2023/01/08 14:05:17 by hkubo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,7 @@ EXPOSE 9000
 # Setup wordpress
 RUN wget https://wordpress.org/latest.tar.gz && \
     tar -xvzf latest.tar.gz && rm -rf latest.tar.gz && \
-    mkdir -p /var/www/html && \
-    mv wordpress /var/www/html
+    mkdir -p /var/www/html
 
 COPY tools/* /
 COPY conf/* /

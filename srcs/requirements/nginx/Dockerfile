@@ -6,7 +6,7 @@
 #    By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/25 16:48:53 by hkubo             #+#    #+#              #
-#    Updated: 2023/01/06 22:01:23 by hkubo            ###   ########.fr        #
+#    Updated: 2023/01/08 14:59:33 by hkubo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ RUN apt-get update && apt-get install -y \
 
 # Setup nginx
 COPY conf/nginx.conf /etc/nginx/sites-available/default
-# RUN rm /var/www/html/index.nginx-debian.html && chmod 744 nginx.sh
 
 # Setup SSL
 RUN wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64 && \
