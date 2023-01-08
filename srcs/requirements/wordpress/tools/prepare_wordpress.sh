@@ -1,6 +1,7 @@
 # !/bin/sh
 
 # chmod 744 /var/www/wp-config.php
+# rm -rf /var/www/html/wordpress
 mv wordpress /var/www/html
 mv wp-config.php /var/www/html/wordpress
 
