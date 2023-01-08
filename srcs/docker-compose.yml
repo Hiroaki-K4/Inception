@@ -7,23 +7,31 @@ services:
       - "8080:80"
       - "443:443"
     volumes:
-      - ./requirements/nginx/nginx.conf:/etc/nginx/sites-available/default
-      - shared-volume:/var/www/html
+      - wp:/var/www/html
     networks:
-      - frontend
+      - app_network
 
   wordpress:
     build: ./requirements/wordpress
     ports:
       - "9000:9000"
     volumes:
-      - shared-volume:/var/www/html
+      - wp:/var/www/html
     networks:
-      - frontend
+      - app_network
+
+  mariadb:
+    build: ./requirements/mariadb
+    ports:
+      - "3306:3306"
+    # volumes:
+    #   - /home/hiroakik4/42/volumes/db:/var/www/html
+    networks:
+      - app_network
 
 networks:
-  frontend:
-  backend:
+  app_network:
 
 volumes:
-  shared-volume:
+  wp:
+  db:

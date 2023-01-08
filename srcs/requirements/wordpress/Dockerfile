@@ -6,7 +6,7 @@
 #    By: hkubo <hkubo@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/02 21:15:48 by hkubo             #+#    #+#              #
-#    Updated: 2023/01/04 22:37:59 by hkubo            ###   ########.fr        #
+#    Updated: 2023/01/06 21:52:32 by hkubo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ RUN wget https://wordpress.org/latest.tar.gz && \
     mv wordpress /var/www/html
 
 COPY tools/* /
+COPY conf/* /
 
 RUN chmod 744 prepare_wordpress.sh
 
