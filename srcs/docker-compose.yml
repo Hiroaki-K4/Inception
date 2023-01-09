@@ -4,12 +4,14 @@ services:
   nginx:
     build: ./requirements/nginx
     ports:
-      - "8080:80"
       - "443:443"
     volumes:
       - /home/hiroakik4/42/Inception/data/wp:/var/www/html
     networks:
       - app_network
+    depends_on:
+      - wordpress
+    restart: always
 
   wordpress:
     build: ./requirements/wordpress
@@ -19,6 +21,9 @@ services:
       - /home/hiroakik4/42/Inception/data/wp:/var/www/html
     networks:
       - app_network
+    depends_on:
+      - mariadb
+    restart: always
 
   mariadb:
     build: ./requirements/mariadb
@@ -28,6 +33,9 @@ services:
       - db:/var/lib/mysql
     networks:
       - app_network
+    restart: always
+    env_file:
+      - app.env
 
 networks:
   app_network:

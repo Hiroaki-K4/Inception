@@ -1,14 +1,12 @@
-FROM debian:buster
+FROM alpine:3.16
 
-RUN apt-get update && apt-get install -y \
-    mariadb-server
+RUN apk update && apk upgrade && apk add --no-cache \
+    mariadb \
+    mariadb-client
 
 EXPOSE 3306
 
 COPY conf/* /
+COPY tools/* /
 
-RUN chmod 744 init_db.sql
-
-RUN service mysql start && mysql < init_db.sql
-
-ENTRYPOINT ["mysqld"]
+ENTRYPOINT ["sh", "prepare_mariadb.sh"]
