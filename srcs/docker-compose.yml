@@ -11,6 +11,7 @@ services:
       - app_network
     depends_on:
       - wordpress
+    restart: always
 
   wordpress:
     build: ./requirements/wordpress
@@ -22,6 +23,7 @@ services:
       - app_network
     depends_on:
       - mariadb
+    restart: always
 
   mariadb:
     build: ./requirements/mariadb
@@ -31,6 +33,9 @@ services:
       - db:/var/lib/mysql
     networks:
       - app_network
+    restart: always
+    env_file:
+      - app.env
 
 networks:
   app_network:

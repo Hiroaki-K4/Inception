@@ -1,12 +1,6 @@
 # Inception
 
-
-## Introduction
-This project aims to broaden your knowledge of system administration by using Docker.
-You will virtualize several Docker images, creating them in your new personal virtual machine.
-
-
-## Mandatory part
+## About this project
 This project consists in having you set up a small infrastructure composed of different
 services under specific rules. The whole project has to be done in a virtual machine. You
 have to use docker-compose.
@@ -46,16 +40,20 @@ Run containers
 make
 ```
 
-Stop containers
+Stop and remove containers
 ```
-make stop
+make down
 ```
 
-Get inside the container
+Remove resources
 ```
-docker compose exec [nginx or wordpress or mariadb] bash
+make fclean
 ```
+
 
 ## References
 - [Nginx Beginner’s Guide](http://nginx.org/en/docs/beginners_guide.html)
 - [php-fpmの設定を理解してサイトのパフォーマンスを向上させる](https://hackers-high.com/linux/php-fpm-config/)
+- [Secure MySQL](https://docs.bitnami.com/google/infrastructure/mysql/administration/secure-server-mysql/)
+- [MySQL起動オプション解説](http://www.limy.org/program/db/mysql/mysql_option.html)
+- [How To Allow Remote Access to MySQL](https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql)
